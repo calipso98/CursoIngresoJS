@@ -4,6 +4,12 @@
 */
 function mostrar()
 {
+	var nombre;
+
+	nombre = prompt ("Ingrese su nombre");
+
+	/*origen*/document.getElementById("elNombre").value =/* destino */ nombre; //se le asigno lo que esta en la variable nombre a la caja de texto en el html
+	
 
 }
 
