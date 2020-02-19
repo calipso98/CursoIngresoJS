@@ -10,8 +10,8 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
-    var cantLamp = parseInt(document.getElementById("Cantidad").value);
-    var marca = document.getElementById("Marca").value;
+    var cantLamp;
+    var marca;
     var desclamp;
     var descuento;
     var preciofinal;
@@ -20,6 +20,10 @@ function CalcularPrecio ()
     var precio = 35;
     var flag = 0;
 
+    cantLamp = parseInt(document.getElementById("Cantidad").value)
+    marca = document.getElementById("Marca").value;
+
+    
     switch(cantLamp){
 
         case 1:
