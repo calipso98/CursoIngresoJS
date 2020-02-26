@@ -8,84 +8,83 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-function CalcularPrecio () 
-{
-    var cantLamp;
-    var marca;
-    var desclamp;
-    var descuento;
-    var preciofinal;
-    var preciototal;
-    var ingresosBB;
+function CalcularPrecio() {
     var precio = 35;
-    var flag = 0;
+    var cantlamp;
+    var descuento;
+    var desclamp;
+    var marca;
+    var preciofinal;
+    var IB;
+    var preciototal;
+    var flag = 4;
 
-    cantLamp = parseInt(document.getElementById("Cantidad").value)
+
+
+
+    cantlamp = parseInt(document.getElementById("Cantidad").value)
     marca = document.getElementById("Marca").value;
 
-    
-    switch(cantLamp){
-
+    switch (cantlamp) {
         case 1:
         case 2:
-            
             desclamp = 0;
-            
             break;
-        
+
         case 3:
-            
-            if(marca == "ArgentinaLuz"){
-                
+            if (marca == "ArgentinaLuz") {
                 desclamp = 15;
-            
-            }else if( marca == "FelipeLamparas"){
-                
+
+            }
+            else if (marca == "FelipeLamparas") {
                 desclamp = 10;
-            
-            }else{
+            }
+            else {
                 desclamp = 5;
             }
             break;
 
         case 4:
-
-            if(marca == "ArgentinaLuz" || marca == "FelipeLamparas"){
+            if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
                 desclamp = 25;
-            }else{
+            } else {
                 desclamp = 20;
             }
             break;
+
         case 5:
-            if(marca == "ArgentinaLuz"){
+            if (marca == "ArgentinaLuz") {
                 desclamp = 40;
-            }else{              
-                desclamp = 30;
 
             }
+            else {
+                desclamp = 30;
+            }
             break;
-            default:
-                desclamp = 50;
+        default:
+            desclamp = 50;
+
+
+
 
     }
 
     descuento = precio * desclamp / 100;
     preciofinal = precio - descuento;
-     
+    preciototal = preciofinal * cantlamp;
+
+    if (preciototal > 120) {
+        IB = preciototal * 10 / 100;
+        preciototal = preciototal + IB;
+        flag = 2;
+    }
+
     document.getElementById("precioDescuento").value = preciofinal;
 
-    preciototal = preciofinal * cantLamp;
+    alert("El precio a Pagar es $" + preciototal);
 
-    if(preciototal > 120){
-
-        ingresosBB = preciototal * 10 /100;
-        preciototal = preciototal + ingresosBB;
-        flag = 1;
-    }
-
-    alert("El precio a Pagar es $ " + preciototal);
-
-    if ( flag == 1){
-    alert("Usted pago " + ingresosBB + " de Ingresos Brutos.");
+    if (flag == 2) {
+        alert("Usted pago $" + IB + " de Ingresos Brutos.");
     }
 }
+    
