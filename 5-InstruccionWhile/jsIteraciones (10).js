@@ -2,18 +2,12 @@ function mostrar()
 {
 		var numero;
 		var	seguir;
-		var neg;
-		var pos;
-		var cont_neg = 1;
-		var cont_pos = 1;
-		var cont_0 = 0;
-		var flag = 1;
 
 	do {
 		numero = parseInt(prompt("Ingrese un numero: "));
 
 		while (isNaN(numero)) {
-			numero = parseInt(prompt("Eso no es un numero Ingrese un numero: "));
+			numero = parseInt(prompt("Eso no es un numero, Ingrese un numero: "));
 		}
 
 		if (flag == 1){
@@ -21,11 +15,11 @@ function mostrar()
 			pos = numero;
 			flag = 2;
 		}
-		if (numero < 0 ) {
+		else if (numero < 0 ) {
 			neg = neg + numero;
 			cont_neg ++
 		}
-		else if (numero > 0 ) {
+		else (numero > 0 ) {
 			pos = numero;
 			cont_pos ++;
 			
