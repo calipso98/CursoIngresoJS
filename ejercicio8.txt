@@ -83,11 +83,11 @@ function mostrar() {
         promedioPos = acumuladorPos / contadorPos;
     }
 
-    document.write("a) La cantidad de nÃºmeros pares: " + contadorPares + "</br>");
-    document.write("b) La cantidad de nÃºmeros impares: " + contadorImpares + "</br>");
+    document.write("a) La cantidad de números pares: " + contadorPares + "</br>");
+    document.write("b) La cantidad de números impares: " + contadorImpares + "</br>");
     document.write("c) La cantidad de ceros: " + contadorCeros + "</br>");
-    document.write("d) El promedio de todos los nÃºmeros positivos ingresados: " + promedioPos + "</br>");
-    document.write("e) La suma de todos los nÃºmeros negativos: " + acumuladorNeg + "</br>");
+    document.write("d) El promedio de todos los números positivos ingresados: " + promedioPos + "</br>");
+    document.write("e) La suma de todos los números negativos: " + acumuladorNeg + "</br>");
     document.write("f) Maximo: " + maximo + " Letra: " + letraMax + "</br>");
     document.write("f) Minimo: " + minimo + " Letra: " + letraMin + "</br>");
     document.write("g) El menor numero de las letras minusculas: " + minimoMinus + " Letra: " + letraMinMinus + "</br>");

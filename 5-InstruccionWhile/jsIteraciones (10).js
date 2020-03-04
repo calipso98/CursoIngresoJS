@@ -2,6 +2,7 @@ function mostrar()
 {
 		var numero;
 		var	seguir;
+		
 
 	do {
 		numero = parseInt(prompt("Ingrese un numero: "));
