@@ -1,44 +1,52 @@
 function mostrar() {
-    var nota;
     var sexo;
-    var notaMenor;
-    var sexoMenor;
-    var contadorVaronesMas6 = 0;
-    var acumuladorNotas = 0;
+    var notatotal;
+    var notamenor;
+    var sexomenor;
+    var contvaronesmasde6 = 0;
+    var nota;
     var promedio;
+    var acumuladordenotas = 0;
     var flag = 0;
 
     for (var i = 0; i < 5; i++) {
 
-        nota = parseInt(prompt("Ingrese nota (0-10): "));
-        while (nota < 0 || nota > 10 || isNaN(nota)) {
-            nota = parseInt(prompt("Nota invalida. Ingrese nota (0-10): "));
-        }
-        // acá valido la nota
+        //valido nota
 
-        sexo = prompt("Ingrese sexo (f-m): ");
-        while (sexo != 'f' && sexo != 'm') {
-            sexo = prompt("Sexo invalido. Ingrese sexo (f-m): ");
-        }
-        // acá valido el sexo
+        nota = parseInt(prompt("Ingrese nota del 1 al 10"));
 
-        acumuladorNotas = acumuladorNotas + nota;
+        while (nota < 0 || nota > 10 || isNaN(nota))
 
-        if (nota < notaMenor || flag == 0) {
-            notaMenor = nota;
-            sexoMenor = sexo;
+            nota = parseInt(prompt("nota invalida, Ingrese nota del 1 al 10"));
+
+        //valido el sexo
+
+        sexo = prompt("ingrese su sexo con 'f' o 'm' ")
+        while (sexo != 'm' && sexo != 'f')
+            sexo = prompt("dato invalido, ingrese su sexo con 'f' o 'm' ")
+        //acumulo las notas 
+        acumuladordenotas = acumuladordenotas + nota;
+
+        //nota mas baja
+        if (nota < notamenor || flag == 0) {
+            notamenor = nota;
+            sexomenor = sexo;
             flag = 1;
+
+
         }
 
-        if (sexo == 'm' && nota >= 6) {
-            contadorVaronesMas6++;
-        }
+        if (nota >= 6 && sexo == 'm')
+            contvaronesmasde6++;
+
+
 
     }
+        promedio = acumuladordenotas / 5;
 
-    promedio = acumuladorNotas / 5;
-
-    alert("Promedio Notas: " + promedio + "\nNota Baja: " + notaMenor + "\nSexo nota baja: " + sexoMenor + "\nContador Varones nota >6: " + contadorVaronesMas6);
+        alert ("El promedio de las notas totales es: " + promedio);
+        alert ("La nota mas baja es: " + notamenor + " el sexo de esa persona es " + sexomenor);
+        alert ("la cantidad de varones cuya nota a sido mayor o igual a 6 es: " + contvaronesmasde6);
 
 
 
